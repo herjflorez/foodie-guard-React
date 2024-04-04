@@ -1,38 +1,118 @@
+body{
+  background-color: #E49B0F;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img{
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Encabezado #logo{
+  width: 20%;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* Formulario añadir nuevo restaurante */
+.popUpAddRestaurant{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 50em;
+}
+
+.container-inputs-form{
+  text-align: left;
+  margin: 2em;
+}
+
+.container-inputs-form > div{
+  margin-bottom: 0.5em;
+}
+
+.colums{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.columns > .input-form{
+  width: 30%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.two-colums > .input-form{
+  width: 47%;
+}
+
+.container-inputs-form .inputs-form {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 1.8em;
+}
+
+.container-inputs-form textarea {
+  resize: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.buttons-form{
+  width: 30%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-form button{
+  width: 7em;
+  padding: 0.8em;
+  border-radius: 10px;
+  margin-bottom: 2em;
+}
+
+.buttons-form button:hover{
+  cursor: pointer;
+}
+
+/* .buttons-form button:first-child {
+  background-color: #E49B0F;
+} */
+
+table{
+  background-color: white;
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+
+table td{
+  border: 1px solid black;
+}
+
+.optionButtons{
+  margin: 5%;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.option-edit{
+  background-color: rgb(255, 213, 0);
+}
+
+.option-delete{
+  background-color: red;
 }
