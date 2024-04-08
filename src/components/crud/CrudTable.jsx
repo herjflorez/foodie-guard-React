@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const CrudTable = () => {
+const CrudTable = ({restaurants, getRestaurants}) => {
 
-  const [restaurants, setRestaurants] = useState([])
+  const URL = "http://localhost:8080/api/restaurant"
 
-  const getRestaurants = () => {
-    axios.get("http://localhost:8080/api/restaurant")
-    .then((response) => setRestaurants(response.data))
-  }
 
   const deleteRestaurant = (id) => {
-    axios.delete(`http://localhost:8080/api/restaurant/${id}`)
-    .then(getRestaurants)
+    if(window.confirm("¿Seguro que deseas eliminar el dato?")){
+      axios.delete(`${URL}/${id}`)
+      .then(getRestaurants)
+      .catch(() => alert("Error al eliminar el restaurante"))
+    }
+    
   }
-
-  useEffect(() => {
-    getRestaurants();
-  }, []);
-
-
 
   return (
     <table>
@@ -42,7 +35,7 @@ const CrudTable = () => {
               <td>{restaurant.phone}</td>
               <td>{restaurant.email}</td>
               <td>{restaurant.address}</td>
-              <td> <button className='optionButtons option-edit' onClick={() => deleteRestaurant(restaurant.id)}> Editar </button> </td>
+              <td> <button className='optionButtons option-edit'> Editar </button> </td>
               <td> <button className='optionButtons option-delete' onClick={() => deleteRestaurant(restaurant.id)}> Eliminar </button> </td>
             </tr>
           ))
