@@ -1,6 +1,20 @@
 body{
-  background-color: #E49B0F;
+  background-color: #dadadaff;
+  margin-top: 80px;
 }
+
+*{
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+}
+
+.header-page{
+  padding: 2% 0;
+}
+
+.header-page>h1{
+  text-align: center;
+}
+  
 
 .App {
   text-align: center;
@@ -117,4 +131,30 @@ table td{
 
 .option-delete{
   background-color: red;
+}
+
+.container-buttons-page{
+  display: flex;
+  justify-content: center;
+}
+
+.button-page{
+  width: 7%;
+  margin: 3% 1%;
+  background-color: #E49B0F;
+  padding: 0.5%;
+  transition: 0.4s ease;
+  border: 1px solid black;
+  border-radius: 10px; 
+  font-weight: bold; 
+  font-size: smaller;
+}
+
+
+
+.button-page:hover{
+  cursor: pointer;
+  background-color: #E49B0F;
+  border: 1.5px solid black;
+  box-shadow: 0 10px 10px;
 }

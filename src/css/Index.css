@@ -1,0 +1,54 @@
+
+.container-restaurants{
+    margin: auto 8%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.item-restaurant{
+    width: 20%;
+    margin: 1% 1%;
+    background-color: #E49B0F;
+    border-radius: 10px;
+    border: 1.5px solid black;
+    transition: 0.4s ease;
+}
+
+.item-restaurant:hover{
+    cursor: pointer;
+    box-shadow: 0px 10px 10px;
+    scale: 1.05 ;
+}
+
+.item-restaurant:hover>*{
+    transition: 0.3s ease;
+}
+
+.photo-item>img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 110px;
+}
+
+.info-item{
+    margin: 3%;
+}
+
+.first-info-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-restaurant .first-info-item>div:nth-child(1){
+    transition: 0.3s ease;
+}
+
+.item-restaurant:hover .first-info-item>div:nth-child(1){
+    font-weight: bold;
+}
+
+.first-info-item>div:nth-child(2){
+    text-align: right;
+}

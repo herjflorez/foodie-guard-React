@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const CrudTable = ({restaurants, getRestaurants}) => {
 
-  const URL = "http://localhost:8080/api/restaurant"
+  const URL="http://127.0.0.1:8080/api/restaurant"
 
 
   const deleteRestaurant = (id) => {

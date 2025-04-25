@@ -14,12 +14,18 @@ const CrudApp = () => {
     
     const [restaurants, setRestaurants] = useState([])
 
-  const URL = "http://localhost:8080/api/restaurant"
+  const URL = "http://127.0.0.1:8080/api/restaurant"
 
-  const getRestaurants = () => {
-    axios.get(URL)
-    .then((response) => setRestaurants(response.data))
-    .catch(() => alert("Error al cargar los restaurantes"))
+  const getRestaurants = async () => {
+    try{
+      const response = await axios.get(URL)
+      console.log("Respuesta:" , response.data)
+      console.log(response.status);
+      setRestaurants(response.data)
+
+    } catch(error){
+      console.log("Error pertición", error)
+    }
   }
 
   

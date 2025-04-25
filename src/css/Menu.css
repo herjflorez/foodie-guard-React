@@ -1,0 +1,158 @@
+    .navbar{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 2px solid black;
+        box-shadow: 0px 5px 20px;
+        position: fixed;
+        background-color: #E49B0F;
+        top: 0;
+        z-index: 99;
+    }
+
+    .navbar-left,
+    .navbar-center,
+    .navbar-right{
+        display: flex;
+        align-items: center;
+        width: 33%;
+        height: 60px;
+    }
+
+    .menu-button{
+        background-color: transparent;
+        color: black;
+        font-size: 30px;
+        margin: auto 10px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .menu-button:hover{
+        background-color: transparent;
+        color: black;
+        font-size: 30px;
+        margin: auto 10px;
+        border: none;
+        cursor: pointer;
+        text-shadow: -10px 10px 10px;
+    }
+
+    .button-close-menu{
+        font-weight: bold;
+        font-size: 2.5vmin;
+        position: absolute;
+        right: 5%;
+        top: 2%;
+        transition: 0.3s ease;
+    }
+
+    .button-close-menu:hover{
+        scale: 1.3;
+        cursor: pointer;
+    }
+
+    .menuNavigation{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
+        transition: width 0.3s ease;
+        width: 0;
+        background-color: rgba(218, 218, 218, 0.999);
+        border-right: 2px solid black;
+        z-index: 100;
+    }
+
+    .menuNavigation.open{
+        width: 25%;
+    }
+
+    .tittle-menu{
+        text-align: center;
+    }
+
+    .optionMenu{
+        list-style: none;
+        font-size: 2.5vmin;  
+        margin-bottom: 3%; 
+    }
+
+    .optionMenu.active-link{
+        font-weight: bold;
+    }
+
+    .optionMenu>*{
+        text-decoration: none;
+        color: black;
+    }
+
+    .optionMenu>*:hover{
+        text-decoration: underline;
+    }
+
+    .navbar-center{
+        justify-content: center;
+    }
+
+    .tittle-navbar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .tittle-navbar{
+        min-width: 250px;
+        width: min-content;
+        text-decoration: none;
+        color: black;
+        transition: 0.3s ease;
+    }
+
+    .tittle-navbar>h2{
+        transition: 0.3s ease;
+    }
+
+    .tittle-navbar:hover>h2{
+        text-shadow: 0px 10px 10px;
+    }
+
+    .image-logo{
+        width: 13%;
+        min-width: 65px;
+    }
+
+    .navbar-right{
+        justify-content: end;
+        margin: 10px;
+    }
+
+    .login-button{  
+        margin: auto 10px;
+        padding: 8px 30px;
+        border: 1.5px solid black;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        transition: 0.3s ease;
+    }
+
+    .login-button:hover{
+        background-color: #dadadaff;  
+        box-shadow: 10px 10px 10px;
+
+    }
+
+    .user-info-menu{
+        margin: auto 10px;
+        font-weight: bold;
+    }
+
+    .user-info-menu:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
