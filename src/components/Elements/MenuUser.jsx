@@ -1,29 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'
 import Image from './../../assets/Logo.png';
-import axios from 'axios';
+import { AuthContext } from '../../context/AuthContext';
 
 const MenuUser = () => {
 
     const [open, setOpen] = useState(false);
-    const [user, setUser] = useState(null); // <- Estado del usuario
-
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-    
-        if (token) {
-          axios
-            .post(`${process.env.REACT_APP_API_URL}/checkUser`, { token })
-            .then((res) => {
-              setUser(res.data); // Guardamos los datos del usuario
-            })
-            .catch((err) => {
-              console.error('Token inválido o expirado');
-              localStorage.removeItem('token');
-              setUser(null);
-            });
-        }
-    }, []);
+    const { user, isAuthenticated } = useContext(AuthContext);
 
     const handleLinkClick = () => {
         setOpen(false);
@@ -49,7 +33,7 @@ const MenuUser = () => {
                         <li className={`optionMenu ${locationPath === '/' ? 'active-link' : ''}`}> <Link to="/" onClick={handleLinkClick}> Inicio </Link> </li>
                         <li className={`optionMenu ${locationPath === '/Alergenos' ? 'active-link' : ''}`}> <Link to="/Alergenos" onClick={handleLinkClick}> Alergenos </Link> </li>
                         <li className={`optionMenu ${locationPath === '/Map' ? 'active-link' : ''}`}> <Link to="/Map" onClick={handleLinkClick}> Mapa </Link> </li>
-                        <li className={`optionMenu ${locationPath === '/Cuenta' ? 'active-link' : ''}`}> <Link to="/" onClick={handleLinkClick}> Cuenta </Link> </li>
+                        <li className={`optionMenu ${locationPath === '/Account' ? 'active-link' : ''}`}> <Link to="/Account" onClick={handleLinkClick}> Cuenta </Link> </li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +44,7 @@ const MenuUser = () => {
                     </Link>
             </div>
             <div className='navbar-right'>
-                {user ? (
+                {isAuthenticated ? (
                     <div className='user-info-menu' onClick={handleCloseAccountClick}> {user.email} </div>
                 ) : (
                     <Link to='/Login' className='login-button' onClick={handleLinkClick}>

@@ -1,23 +1,20 @@
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import '../../css/Login.css';
+import { AuthContext } from '../../context/AuthContext';
+
 
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const {isAuthenticated } = useContext(AuthContext);
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      console.log('Usuario tiene token');
-      navigate('/');
-    } else {
-      console.log('No hay token');
-    }
-  }, [navigate]);   
+
+  if(isAuthenticated){
+    window.location.href = '/';
+  }
 
   const handleChange = (e) => {
     setForm({
@@ -25,6 +22,10 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  const createAccount = (e) => {
+    window.location.href = '/createAccount';
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ const Login = () => {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, form);
 
       localStorage.setItem('token', response.data.Token);
-      navigate('/')
+      window.location.href = '/';
 
     } catch (err) {
       if (err.response) {
@@ -76,13 +77,13 @@ const Login = () => {
         </div>
 
         <div className='new-account-button'>
-          <p> ¿No tienes cuenta? Registrate</p>
+          <p onClick={createAccount}> ¿No tienes cuenta? Registrate</p>
         </div>
 
           {error ? (
             <p className="error-message-login">{error}</p>
           ) : (
-            <p className="error-message-login-false"> asdj </p>
+            <p className="error-message-login-false"> . </p>
           )}
 
         <button className={`button-login ${loading  ? 'loading' : ''}`} type="submit" disabled={loading}>

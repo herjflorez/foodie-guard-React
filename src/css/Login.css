@@ -71,11 +71,13 @@
     padding: 3% 0;
     border-radius: 5px;
     background-color: #dadadaff;
+    transition: .3s ease;
     margin: 8%;
 }
 
 .button-login:hover{
     cursor: pointer;
+    font-weight: bold;
 }
 
 .button-login.loading:hover{

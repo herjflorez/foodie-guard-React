@@ -1,0 +1,158 @@
+body{
+    /* overflow-y: hidden; */
+}
+
+.container-account{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    border: 2px solid black;
+    box-shadow: 0 10px 10px;
+}
+
+.account-menu{
+    width: 30%;
+}
+
+.photo-user{
+    margin: 10% 20%;
+}
+
+.container-menu-options{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.line-divisor{
+    /* background-color: #E49B0F; */
+    background-color: black;
+    width: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 500px;
+}
+
+.option-selection{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 3%;
+    margin: 0;
+}
+
+.option-selection:hover{
+    cursor: pointer;
+    background-color: #E49B0F;
+
+}
+
+.option-selection.selected{
+    background-color: #E49B0F;
+    font-weight: bold;
+    position: relative;
+    width: 94.5%;
+
+}
+
+.session-inactive{
+    margin: auto auto;
+    font-size: 5rem ;
+    text-align: center; 
+}
+
+.container-options{
+    width: 70%;
+    background-color: #E49B0F;
+}
+
+.option-menu{
+    margin: auto 7%;
+}
+
+.name-account{
+    font-size: 3.5rem;
+    border-bottom: 2px solid;
+}
+
+.mail-account{
+    font-size: 1.7rem;
+}
+
+.container-change-password{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-change-password{
+    text-align: center;
+}
+
+.form-change-password div{
+    display: flex;
+    align-items: center;
+}
+
+.form-change-password div p{
+    width: 20%;
+}
+
+.container-options input{
+    height: fit-content ;
+    margin: 5px;
+    background-color: #dadadaff;
+    border: 1px solid black;
+    padding: .7%;
+    border-radius: 10px;
+    width: 30%;
+}   
+
+.button-change-password{
+    background-color: #dadadaff;
+    width: 20%;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 50px;
+}
+
+.button-change-password:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button-account-closeSession{
+    color: red;
+    background-color: transparent;
+    font-size: large;
+    padding: 1% 5%;
+    margin-top: 10%;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: .3s ease;
+}
+
+.button-account-closeSession:hover  {
+    cursor: pointer;
+    text-decoration: underline;
+    scale: 1.1;
+}
+
+.tittle-option-account{
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+.container-form-new-restaurants{
+    display: flex;
+    justify-content: center;
+}
+
+.prueba1{
+    background-color: red;
+    width: 50%;
+}
+
+.prueba2{
+    background-color: blue;
+    width: 50%;
+}

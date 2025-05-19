@@ -7,6 +7,7 @@ import Alergenos from './components/Pages/Alergenos';
 import Mapa from './components/Pages/Mapa';
 import Cuenta from './components/Pages/Cuenta';
 import Login from './components/Pages/Login';
+import NewAccount from './components/Pages/NewAccount';
 // import Component from './components/Component';
 
 function App() {
@@ -16,9 +17,10 @@ function App() {
           <Route path='/' element={<Index />} />
           <Route path='/Restaurants' element={<CrudApp />} />
           <Route path='/Alergenos' element={<Alergenos />} />
-          <Route path='/map' element={<Mapa />} />
-          <Route path='/account' element={<Cuenta />} />
+          <Route path='/Map' element={<Mapa />} />
+          <Route path='/Account' element={<Cuenta />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/createAccount' element={<NewAccount />} />
 
       </Routes>
     
